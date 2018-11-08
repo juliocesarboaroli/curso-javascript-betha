@@ -1,0 +1,73 @@
+<div class="container">
+    <h2>{{vm.titulo}}</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Dados do goleiro</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-6">Nome: {{vm.goleiro.nome}}</div>
+                        <div class="col-md-2">Altura: {{vm.goleiro.altura}}</div>
+                        <div class="col-md-2" ng-if="vm.goleiro.peso">Peso: {{vm.goleiro.peso}}</div>
+                        <div class="col-md-2">Telefone: {{vm.goleiro.telefone}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form class="form-horizontal">
+        <div class="row">
+            <div class="col-md-12">
+                <label>Nome convocador</label>
+                <input type="text" class="form-control" ng-model="vm.convocacao.nome" ng-required="true">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <label>Telefone</label>
+                <input type="text" class="form-control" ng-model="vm.convocacao.telefone" ng-required="true">
+            </div>
+            <div class="col-md-4">
+                <label>Email</label>
+                <input type="email" class="form-control" ng-model="vm.convocacao.email" ng-required="true">
+            </div>
+            <div class="col-md-2">
+                <label>CEP</label>
+                <input type="text" class="form-control" ng-model="vm.convocacao.cep">
+            </div>
+            <div class="col-md-4">
+                <label>Estilo do jogo</label>
+                <select class="form-control" ng-model="vm.convocacao.estiloJogo" ng-required="true">
+                    <option value="Campo">Campo</option>
+                    <option value="Society">Society</option>
+                    <option value="Futsal">Futsal</option>
+                    <option value="Areia">Areia</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <label>Data</label>
+                <input type="date" class="form-control" ng-model="vm.convocacao.data" ng-required="true">
+            </div>
+            <div class="col-md-2">
+                <label>Horário</label>
+                <input type="text" class="form-control" ng-model="vm.convocacao.horario" ng-required="true" placeholder="hh:mm">
+            </div>
+            <div class="col-md-4">
+                <label>Campo</label>
+                <input type="text" class="form-control" ng-model="vm.convocacao.campo" ng-required="true">
+            </div>
+            <div class="col-md-4">
+                <label>Endereço</label>
+                <input type="text" class="form-control" ng-model="vm.convocacao.endereco" ng-required="true">
+            </div>
+        </div>
+        <div class="row margin-top-10">
+            <div class="col-md-12 text-right">
+                <a href="#/convocacoes" class="btn btn-default">Cancelar</a>
+                <button type="button" class="btn btn-primary" ng-click="vm.salvar()">Salvar</button>
+            </div>
+        </div>
+    </form>
+</div>

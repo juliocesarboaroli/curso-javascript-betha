@@ -1,0 +1,55 @@
+<div class="container">
+    <h2>{{vm.titulo}}</h2>
+    <form class="form-horizontal">
+        <div class="row">
+            <div class="col-md-12">
+                <label>Nome</label>
+                <input type="text" class="form-control" ng-model="vm.goleiro.nome" ng-required="true">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Telefone</label>
+                <input type="text" class="form-control" ng-model="vm.goleiro.telefone" ng-required="true">
+            </div>
+            <div class="col-md-4">
+                <label>Email</label>
+                <input type="email" class="form-control" ng-model="vm.goleiro.email">
+            </div>
+            <div class="col-md-2">
+                <label>Altura</label>
+                <input type="number" class="form-control" ng-model="vm.goleiro.altura" ng-required="true">
+            </div>
+            <div class="col-md-2">
+                <label>Idade</label>
+                <input type="number" class="form-control" ng-model="vm.goleiro.idade" ng-required="true">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <label>Peso</label>
+                <input type="number" class="form-control" ng-model="vm.goleiro.peso">
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <label>Tipo de jogo</label>
+                </div>
+                <div class="row">
+                    <label class="checkbox-inline" ng-repeat="tipo in vm.tipos">
+                        <input type="checkbox" name="tipoJogo" ng-model="tipo.valor">{{tipo.label}}
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <label>Endereço</label>
+                <input type="text" class="form-control" ng-model="vm.goleiro.endereco" ng-required="true">
+            </div>
+        </div>
+        <div class="row margin-top-10">
+            <div class="col-md-12 text-right">
+                <a href="#/goleiros" class="btn btn-default">Cancelar</a>
+                <button type="button" class="btn btn-primary" ng-click="vm.salvar()">Salvar</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,51 @@
+<div class="container">
+    <h2>Goleiros</h2>
+    <form class="form-inline">
+        <a href="#/goleiros/adicionar" class="btn btn-success btn-sm">Adicionar</a>
+        <div class="pull-right">
+            <div class="form-group">
+                <input type="text" class="form-control input-sm" ng-model="vm.filtro" placeholder="Digite o nome">
+            </div>
+            <div class="form-group">
+                <a href="" class="btn btn-primary btn-sm" ng-click="vm.buscar()">Buscar</a>
+            </div>
+        </div>
+    </form>
+    <div class="row margin-top-10">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th width="80px">Peso</th>
+                            <th width="80px">Altura</th>
+                            <th width="80px"></th>
+                            <th width="80px"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="goleiro in vm.goleiros">
+                            <td>{{goleiro.nome}}</td>
+                            <td>{{goleiro.peso}}</td>
+                            <td>{{goleiro.altura}}</td>
+                            <td>
+                                <div class="text-center">
+                                    <a href="{{'#/goleiros/editar/' + goleiro._id}}">
+                                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="" ng-click="vm.remover(goleiro)">
+                                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </td>
+                            <td>
+                                <a href="{{'#/convocacoes/convocar/' + goleiro._id}}" class="label label-default">Convocar</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+{
+    "nome":"Teste",
+    "email":"teste@teste.com",
+    "telefone":"99999",
+    "estiloJogo":"Campo",
+    "data":"2017-01-01",
+    "horario":"19:00",
+    "campo":"Campo teste",
+    "endereco":"teste",
+    "goleiro": {
+        "_id": "58faad5e8660d822c49ed891"
+    }
+}
